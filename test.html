@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALTIUS - Elevating Business & Career Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <style>
+        @keyframes blob {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(20px, -20px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 20px) scale(1.05); }
+        }
+        .animate-blob {
+            animation: blob 15s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+        
+        /* Neon glow effect for ALTIUS text */
+        footer h3 span {
+            text-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 15px #3b82f6, 0 0 20px #3b82f6;
+        }
+    
+        /* Hover effect for links */
+        footer a:hover {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff;
+        }
+    </style>
+    
+    <style>
+    @keyframes float-service {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+    .service-card {
+        animation: float-service 6s ease-in-out infinite;
+    }
+    .service-card:nth-child(2) {
+        animation-delay: -2s;
+    }
+    .service-card:nth-child(3) {
+        animation-delay: -4s;
+    }
+</style>
+    <style>
+        /* ... (existing styles) ... */
+    
+        @keyframes float-about {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+        #about-image-container {
+            animation: float-about 6s ease-in-out infinite;
+        }
+    </style>    
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(-2deg); }
+            50% { transform: translateY(0px) rotate(0deg); }
+            75% { transform: translateY(20px) rotate(2deg); }
+        }
+        .floating {
+            animation: float 10s ease-in-out infinite;
+        }
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            perspective: 1000px;
+        }
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .hero-image-front, .hero-image-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .hero-image-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+    </style>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(-2deg); }
+            50% { transform: translateY(0px) rotate(0deg); }
+            75% { transform: translateY(20px) rotate(2deg); }
+        }
+        .floating {
+            animation: float 10s ease-in-out infinite;
+        }
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            perspective: 1000px;
+        }
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .hero-image-front, .hero-image-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .hero-image-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+    </style>
+    <style>
+        /* Floating animation for contact form */
+        @keyframes float-contact {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        #contact-form {
+            animation: float-contact 6s ease-in-out infinite;
+        }
+    
+        /* Glowing effect for form inputs */
+        #contact-form input:focus,
+        #contact-form textarea:focus {
+            box-shadow: 0 0 15px rgba(147, 51, 234, 0.5);
+        }
+    
+        /* Label animation */
+        #contact-form input:focus + label,
+        #contact-form textarea:focus + label,
+        #contact-form input:not(:placeholder-shown) + label,
+        #contact-form textarea:not(:placeholder-shown) + label {
+            transform: translateY(-2.5rem) scale(0.8);
+            color: #9333ea;
+        }
+    
+        /* Placeholder shimmer effect */
+        @keyframes shimmer {
+            0% { background-position: -100% 0; }
+            100% { background-position: 100% 0; }
+        }
+        #contact-form input::placeholder,
+        #contact-form textarea::placeholder {
+            background: linear-gradient(90deg, #f3e8ff, #9333ea, #f3e8ff);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s infinite;
+        }
+    </style>
+    
+</head>
+<body>
+    <header class="fixed w-full bg-white bg-opacity-90 backdrop-blur-md shadow-lg z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-blue-600 flex items-center">
+                <span class="mr-2">ALTIUS</span>
+                <i class="fas fa-chart-line text-2xl"></i>
+            </a>
+            <nav class="hidden lg:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600 transition-colors text-lg font-semibold">Home</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600 transition-colors text-lg font-semibold">Services</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600 transition-colors text-lg font-semibold">About</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600 transition-colors text-lg font-semibold">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hidden lg:block">
+                <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">Get Started</a>
+            </div>
+            <button class="lg:hidden text-gray-700 focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden bg-white" id="mobile-menu">
+            <ul class="px-4 py-2">
+                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">Home</a></li>
+                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">Services</a></li>
+                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">About</a></li>
+                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">Contact</a></li>
+                <li><a href="#" class="block py-2 bg-blue-600 text-white px-4 rounded-full font-semibold hover:bg-blue-700 transition-colors mt-2">Get Started</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+    <!-- Enhanced Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-blue-50 via-white to-gray-100 overflow-hidden">
+        <div class="container mx-auto px-4 relative">
+            <div class="flex flex-col lg:flex-row items-center">
+                <!-- ... (left column content remains the same) ... -->
+                <div class="lg:w-1/2 mb-10 lg:mb-0 z-10">
+                    <h1 class="text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
+                        <span class="block" id="hero-text-1">Elevate Your</span>
+                        <span class="block text-blue-600" id="hero-text-2">Business & Career</span>
+                        <span class="block" id="hero-text-3">with ALTIUS</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8" id="hero-description">We provide cutting-edge solutions to propel your business growth and accelerate your career trajectory. Our expert team leverages data-driven strategies and innovative technologies to ensure your success in today's competitive landscape.</p>
+                    <div class="space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row">
+                        <a href="#" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors text-center" id="cta-button-1">Get Started</a>
+                        <a href="#" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold border border-blue-600 hover:bg-blue-50 transition-colors text-center" id="cta-button-2">Learn More</a>
+                    </div>
+                    <div class="mt-12 flex items-center space-x-6">
+                        <div class="flex items-center">
+                            <img src="mobile.jpg" alt="Client" class="rounded-full w-10 h-10 mr-2">
+                            <span class="text-gray-600">500+ Clients</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400 mr-2"></i>
+                            <span class="text-gray-600">4.9/5 Rating</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute top-0 left-0 w-full h-full bg-blue-100 rounded-full filter blur-3xl opacity-70 animate-pulse"></div>
+                    <div class="hero-image-container" id="hero-image-container">
+                        <div class="hero-image-wrapper" id="hero-image-wrapper">
+                            <div class="hero-image-front">
+                                <img src="https://via.placeholder.com/600x500" alt="Business Solutions" class="rounded-lg shadow-2xl relative z-10 w-full h-full object-cover" id="hero-image">
+                            </div>
+                            <div class="hero-image-back">
+                                <p>Discover how ALTIUS can transform your business and career!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 right-0 bg-white p-4 rounded-lg shadow-lg z-20" id="stat-card">
+                        <p class="text-2xl font-bold text-blue-600">97%</p>
+                        <p class="text-gray-600">Client Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full">
+                <div class="absolute top-0 left-0 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+<section id="about" class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 overflow-hidden">
+    <div class="container mx-auto px-4 relative">
+        <div class="flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2 mb-10 lg:mb-0 z-10">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight" id="about-title">
+                    About <span class="text-blue-600">ALTIUS</span>
+                </h2>
+                <p class="text-xl text-gray-600 mb-8" id="about-description">
+                    At ALTIUS, we're passionate about elevating businesses and careers to new heights. Our team of expert consultants brings years of industry experience and cutting-edge strategies to help you achieve your goals.
+                </p>
+                <ul class="space-y-4" id="about-features">
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-blue-600 mr-3"></i>
+                        <span class="text-gray-700">Tailored solutions for your unique challenges</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-blue-600 mr-3"></i>
+                        <span class="text-gray-700">Data-driven strategies for measurable results</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-blue-600 mr-3"></i>
+                        <span class="text-gray-700">Continuous support and guidance throughout your journey</span>
+                    </li>
+                </ul>
+                <a href="#" class="inline-block mt-8 bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors" id="about-cta">Learn More About Us</a>
+            </div>
+            <div class="lg:w-1/2 relative">
+                <div class="absolute top-0 left-0 w-full h-full bg-blue-100 rounded-full filter blur-3xl opacity-70 animate-pulse"></div>
+                <div class="relative z-10" id="about-image-container">
+                    <img src="https://via.placeholder.com/600x400" alt="ALTIUS Team" class="rounded-lg shadow-2xl w-full h-full object-cover" id="about-image">
+                    <div class="absolute bottom-4 right-4 bg-white p-4 rounded-lg shadow-lg" id="about-stat">
+                        <p class="text-2xl font-bold text-blue-600">10+</p>
+                        <p class="text-gray-600">Years of Excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Services Section -->
+<section id="services" class="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50 overflow-hidden">
+    <div class="container mx-auto px-4 relative">
+        <h2 class="text-4xl lg:text-5xl font-bold text-center text-gray-800 mb-12" id="services-title">
+            Our <span class="text-blue-600">Services</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
+            <!-- Service Card 1 -->
+            <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <div class="h-48 bg-blue-600 flex items-center justify-center">
+                    <i class="fas fa-chart-line text-6xl text-white"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Business Strategy</h3>
+                    <p class="text-gray-600">Develop winning strategies to propel your business forward in today's competitive landscape.</p>
+                    <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800 font-semibold">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+            
+            <!-- Service Card 2 -->
+            <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <div class="h-48 bg-indigo-600 flex items-center justify-center">
+                    <i class="fas fa-users text-6xl text-white"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Career Coaching</h3>
+                    <p class="text-gray-600">Accelerate your career growth with personalized coaching and mentorship programs.</p>
+                    <a href="#" class="inline-block mt-4 text-indigo-600 hover:text-indigo-800 font-semibold">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+            
+            <!-- Service Card 3 -->
+            <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <div class="h-48 bg-green-600 flex items-center justify-center">
+                    <i class="fas fa-cogs text-6xl text-white"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Process Optimization</h3>
+                    <p class="text-gray-600">Streamline your operations and maximize efficiency with our expert process optimization services.</p>
+                    <a href="#" class="inline-block mt-4 text-green-600 hover:text-green-800 font-semibold">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Interactive Service Showcase -->
+<div class="mt-20 bg-white rounded-xl shadow-2xl p-8" id="service-showcase">
+    <h3 class="text-3xl font-bold text-center text-gray-800 mb-8">Experience Our Services</h3>
+    <div class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-8">
+        <div class="w-full md:w-1/2">
+            <div class="relative h-80 bg-gray-200 rounded-lg overflow-hidden" id="service-image-container">
+                <img src="https://via.placeholder.com/800x600?text=Select+a+Service" alt="Service Showcase" class="w-full h-full object-cover" id="service-image">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300" id="service-overlay">
+                    <p class="text-white text-xl font-semibold text-center px-4" id="service-description"></p>
+                </div>
+                <div class="absolute bottom-0 left-0 w-full h-1 bg-blue-600" id="progress-bar"></div>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col space-y-4">
+            <button class="service-btn bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700 transition-colors" data-service="strategy">Business Strategy</button>
+            <button class="service-btn bg-indigo-600 text-white py-3 px-6 rounded-full hover:bg-indigo-700 transition-colors" data-service="coaching">Career Coaching</button>
+            <button class="service-btn bg-green-600 text-white py-3 px-6 rounded-full hover:bg-green-700 transition-colors" data-service="optimization">Process Optimization</button>
+        </div>
+    </div>
+    <div class="mt-8">
+        <h4 class="text-2xl font-semibold mb-4">Service Metrics</h4>
+        <div class="flex justify-between items-center" id="metrics-container">
+            <!-- Metrics will be dynamically added here -->
+        </div>
+    </div>
+</div>
+        
+    </div>
+</section>
+
+
+<!-- Innovative Contact Section -->
+<section id="contact" class="py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50 overflow-hidden">
+    <div class="container mx-auto px-4 relative">
+        <h2 class="text-4xl lg:text-5xl font-bold text-center text-gray-800 mb-12" id="contact-title">
+            Get in <span class="text-purple-600">Touch</span>
+        </h2>
+        
+        <div class="flex flex-col lg:flex-row items-center justify-between">
+            <!-- Innovative Contact Form -->
+            <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+                <form id="contact-form" class="space-y-6">
+                    <div class="relative">
+                        <input type="text" id="name" class="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all duration-300" required>
+                        <label for="name" class="absolute left-4 top-3 text-gray-500 transition-all duration-300">Your Name</label>
+                    </div>
+                    <div class="relative">
+                        <input type="email" id="email" class="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all duration-300" required>
+                        <label for="email" class="absolute left-4 top-3 text-gray-500 transition-all duration-300">Your Email</label>
+                    </div>
+                    <div class="relative">
+                        <textarea id="message" rows="5" class="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all duration-300" required></textarea>
+                        <label for="message" class="absolute left-4 top-3 text-gray-500 transition-all duration-300">Your Message</label>
+                    </div>
+                    <button type="submit" class="w-full bg-purple-600 text-white py-3 px-6 rounded-lg hover:bg-purple-700 transition-colors duration-300 transform hover:scale-105">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Interactive Contact Information -->
+            <div class="w-full lg:w-1/3">
+                <div class="bg-white rounded-xl shadow-xl p-8 transform hover:rotate-3 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Contact Information</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-4 group">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-purple-200 transition-colors duration-300">
+                                <i class="fas fa-map-marker-alt text-purple-600 text-xl"></i>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-purple-600 transition-colors duration-300">123 Business Ave, Suite 100, City, State 12345</span>
+                        </li>
+                        <li class="flex items-center space-x-4 group">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-purple-200 transition-colors duration-300">
+                                <i class="fas fa-phone-alt text-purple-600 text-xl"></i>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-purple-600 transition-colors duration-300">(123) 456-7890</span>
+                        </li>
+                        <li class="flex items-center space-x-4 group">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-purple-200 transition-colors duration-300">
+                                <i class="fas fa-envelope text-purple-600 text-xl"></i>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-purple-600 transition-colors duration-300">info@altiusconsulting.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+
+<!-- Enhanced Footer Section -->
+<footer class="bg-gradient-to-b from-gray-900 to-black text-white py-16 relative overflow-hidden">
+    <div class="container mx-auto px-4">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- Company Info -->
+            <div class="space-y-4">
+                <h3 class="text-3xl font-bold mb-4 relative inline-block">
+                    <span class="relative z-10">ALTIUS</span>
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-blue-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                </h3>
+                <p class="text-gray-400 leading-relaxed">Elevating businesses and careers to new heights through innovative strategies and personalized solutions.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-xl font-semibold mb-4 relative inline-block group">
+                    <span>Quick Links</span>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                </h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-2 inline-block">Home</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-2 inline-block">About Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-2 inline-block">Services</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-2 inline-block">Case Studies</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-2 inline-block">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="text-xl font-semibold mb-4 relative inline-block group">
+                    <span>Our Services</span>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                </h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-2 inline-block">Business Strategy</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-2 inline-block">Career Coaching</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-2 inline-block">Process Optimization</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-2 inline-block">Digital Transformation</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-2 inline-block">Leadership Development</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div>
+                <h4 class="text-xl font-semibold mb-4 relative inline-block group">
+                    <span>Stay Updated</span>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                </h4>
+                <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest insights and trends.</p>
+                <form id="newsletter-form" class="space-y-4">
+                    <div class="relative">
+                        <input type="email" placeholder="Your email address" class="w-full py-2 px-4 bg-gray-800 text-white rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300">
+                        <button type="submit" class="absolute right-1 top-1 bg-blue-500 text-white rounded-full p-1 hover:bg-blue-600 transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-paper-plane p-2"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Separator -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent my-8"></div>
+
+        <!-- Bottom Footer -->
+        <div class="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+            <p>&copy; 2024 ALTIUS Consulting. All rights reserved.</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors duration-300">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-blob"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-1/2 transform -translate-x-1/2 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-500 text-white p-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-blue-600 focus:outline-none">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+</footer>
+
+<script>
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Footer content animation
+    gsap.from("footer .grid > div", {
+        scrollTrigger: {
+            trigger: "footer",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+        },
+        duration: 0.8,
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        ease: "power2.out"
+    });
+
+    // Social icons hover effect
+    const socialIcons = document.querySelectorAll('footer .fab');
+    socialIcons.forEach(icon => {
+        icon.addEventListener('mouseenter', () => {
+            gsap.to(icon, { y: -5, scale: 1.2, duration: 0.3, ease: "back.out(1.7)" });
+        });
+        icon.addEventListener('mouseleave', () => {
+            gsap.to(icon, { y: 0, scale: 1, duration: 0.3, ease: "back.out(1.7)" });
+        });
+    });
+
+    // Newsletter form submission with animated feedback
+    const newsletterForm = document.getElementById('newsletter-form');
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = newsletterForm.querySelector('input[type="email"]');
+        if (email.value) {
+            // Animate the button
+            gsap.to(newsletterForm.querySelector('button'), {
+                rotate: 360,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+            
+            // Here you would typically send this to your server
+            setTimeout(() => {
+                alert(`Thank you for subscribing with: ${email.value}`);
+                email.value = '';
+                
+                // Show success message
+                const successMsg = document.createElement('div');
+                successMsg.textContent = 'Subscribed successfully!';
+                successMsg.className = 'text-green-500 mt-2';
+                newsletterForm.appendChild(successMsg);
+                
+                gsap.from(successMsg, {
+                    opacity: 0,
+                    y: -10,
+                    duration: 0.5,
+                    ease: "power2.out"
+                });
+                
+                setTimeout(() => {
+                    gsap.to(successMsg, {
+                        opacity: 0,
+                        y: -10,
+                        duration: 0.5,
+                        ease: "power2.in",
+                        onComplete: () => successMsg.remove()
+                    });
+                }, 3000);
+            }, 1000);
+        }
+    });
+
+    // Parallax effect on decorative elements
+    document.addEventListener('mousemove', (e) => {
+        const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+        const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+        gsap.to('.animate-blob', {
+            x: moveX,
+            y: moveY,
+            duration: 1,
+            ease: "power2.out"
+        });
+    });
+
+    // Back to Top button functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.style.opacity = '1';
+        } else {
+            backToTopButton.style.opacity = '0';
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Magnetic effect on buttons
+    const buttons = document.querySelectorAll('footer button');
+    buttons.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            gsap.to(btn, {
+                x: (x - rect.width / 2) / rect.width * 10,
+                y: (y - rect.height / 2) / rect.height * 10,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+            gsap.to(btn, {
+                x: 0,
+                y: 0,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        });
+    });
+
+    // Typewriter effect for company description
+    const companyDesc = document.querySelector('footer p');
+    const text = companyDesc.textContent;
+    companyDesc.textContent = '';
+    let i = 0;
+    
+    function typeWriter() {
+        if (i < text.length) {
+            companyDesc.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
+        }
+    }
+
+    ScrollTrigger.create({
+        trigger: companyDesc,
+        start: "top 80%",
+        onEnter: typeWriter
+    });
+</script>
+
+
+
+<script>
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Contact title animation
+    gsap.from("#contact-title", {
+        scrollTrigger: {
+            trigger: "#contact",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+        },
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        ease: "power2.out"
+    });
+
+    // Contact form animation
+    gsap.from("#contact-form", {
+        scrollTrigger: {
+            trigger: "#contact-form",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+        },
+        duration: 1,
+        opacity: 0,
+        x: -50,
+        ease: "power2.out"
+    });
+
+    // Contact information animation
+    gsap.from("#contact .bg-white", {
+        scrollTrigger: {
+            trigger: "#contact .bg-white",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+        },
+        duration: 1,
+        opacity: 0,
+        x: 50,
+        rotation: 5,
+        ease: "power2.out"
+    });
+
+    // Form input animations
+    const inputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            gsap.to(input, { scale: 1.05, duration: 0.3, ease: "power2.out" });
+        });
+        input.addEventListener('blur', () => {
+            gsap.to(input, { scale: 1, duration: 0.3, ease: "power2.out" });
+        });
+    });
+
+    // Magnetic effect on submit button
+    const submitBtn = document.querySelector('#contact-form button[type="submit"]');
+    const magneticArea = 30;
+
+    submitBtn.addEventListener('mousemove', (e) => {
+        const { offsetX, offsetY, target } = e;
+        const { clientWidth, clientHeight } = target;
+        const x = offsetX - clientWidth / 2;
+        const y = offsetY - clientHeight / 2;
+        
+        gsap.to(submitBtn, {
+            duration: 0.3,
+            x: x * magneticArea / clientWidth,
+            y: y * magneticArea / clientHeight,
+            ease: "power2.out"
+        });
+    });
+
+    submitBtn.addEventListener('mouseleave', () => {
+        gsap.to(submitBtn, { duration: 0.3, x: 0, y: 0, ease: "power2.out" });
+    });
+
+    // Form submission handling (you can customize this part)
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Add your form submission logic here
+        alert('Form submitted successfully!');
+    });
+</script>
+<script>
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Services title animation
+    gsap.from("#services-title", {
+        scrollTrigger: {
+            trigger: "#services",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+        },
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        ease: "power2.out"
+    });
+
+    // Service cards animation
+    gsap.from(".service-card", {
+        scrollTrigger: {
+            trigger: "#services-grid",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+        },
+        duration: 0.8,
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        ease: "power2.out"
+    });
+
+    
+</script>
+
+
+
+<script>
+    // ... (existing script content) ...
+
+    // About section animations
+    gsap.from("#about-image", {
+        scrollTrigger: {
+            trigger: "#about",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+        },
+        duration: 1.5,
+        opacity: 0,
+        y: 100,
+        rotation: 5,
+        ease: "power3.out"
+    });
+
+    gsap.from("#about-title", {
+        scrollTrigger: {
+            trigger: "#about",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+        },
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        ease: "power2.out"
+    });
+
+    gsap.from("#about-description, #about-features, #about-cta", {
+        scrollTrigger: {
+            trigger: "#about",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+        },
+        duration: 1,
+        opacity: 0,
+        y: 30,
+        stagger: 0.2,
+        ease: "power2.out"
+    });
+
+    gsap.from("#about-stat", {
+        scrollTrigger: {
+            trigger: "#about",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+        },
+        duration: 0.8,
+        opacity: 0,
+        scale: 0.8,
+        ease: "back.out(1.7)"
+    });
+</script>
+    
+
+    <script>
+        // ... (previous script content) ...
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero image animation
+        gsap.from("#hero-image", {
+            duration: 1.5,
+            opacity: 0,
+            y: 100,
+            rotation: 5,
+            ease: "power3.out"
+        });
+
+        // Text animations
+        const heroTextElements = ["#hero-text-1", "#hero-text-2", "#hero-text-3"];
+        heroTextElements.forEach((element, index) => {
+            gsap.from(element, {
+                duration: 1,
+                opacity: 0,
+                y: 50,
+                delay: 0.2 * index,
+                ease: "power2.out"
+            });
+        });
+
+        gsap.from("#hero-description", {
+            duration: 1,
+            opacity: 0,
+            y: 30,
+            delay: 0.8,
+            ease: "power2.out"
+        });
+
+        // Button animations
+        gsap.from("#cta-button-1, #cta-button-2", {
+            duration: 0.8,
+            opacity: 0,
+            y: 20,
+            stagger: 0.2,
+            delay: 1,
+            ease: "power2.out"
+        });
+
+        // Stat card animation
+        gsap.from("#stat-card", {
+            duration: 0.8,
+            opacity: 0,
+            scale: 0.8,
+            delay: 1.2,
+            ease: "back.out(1.7)"
+        });
+
+        // Scroll-triggered animations
+        gsap.from(".animate-on-scroll", {
+            scrollTrigger: {
+                trigger: ".animate-on-scroll",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse"
+            },
+            duration: 1,
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+
+        // Enhanced Hero Image Animations
+        const heroImageContainer = document.getElementById('hero-image-container');
+        const heroImageWrapper = document.getElementById('hero-image-wrapper');
+        const heroImage = document.getElementById('hero-image');
+
+        // 3D Tilt Effect
+        heroImageContainer.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            heroImageWrapper.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // Reset on mouse leave
+        heroImageContainer.addEventListener('mouseleave', () => {
+            heroImageWrapper.style.transform = 'rotateY(0deg) rotateX(0deg)';
+        });
+
+        // Flip effect
+        heroImageContainer.addEventListener('click', () => {
+            heroImageWrapper.style.transform = heroImageWrapper.style.transform === 'rotateY(180deg)' 
+                ? 'rotateY(0deg)' 
+                : 'rotateY(180deg)';
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero image entrance animation
+        gsap.from("#hero-image-container", {
+            duration: 1.5,
+            opacity: 0,
+            y: 100,
+            rotation: 10,
+            scale: 0.8,
+            ease: "elastic.out(1, 0.5)"
+        });
+
+        // Continuous floating animation
+        gsap.to("#hero-image-container", {
+            y: 20,
+            rotation: 2,
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut"
+        });
+
+        // Image reveal animation
+        gsap.fromTo("#hero-image", 
+            { clipPath: "inset(100% 0 0 0)" },
+            { 
+                clipPath: "inset(0% 0 0 0)", 
+                duration: 1.5, 
+                ease: "power4.inOut",
+                delay: 0.5
+            }
+        );
+
+        // Particle effect
+        const particleCount = 50;
+        const colors = ['#3b82f6', '#1e40af', '#60a5fa'];
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'absolute w-2 h-2 bg-blue-400 rounded-full';
+            heroImageContainer.appendChild(particle);
+
+            gsap.set(particle, {
+                x: gsap.utils.random(0, heroImageContainer.offsetWidth),
+                y: gsap.utils.random(0, heroImageContainer.offsetHeight),
+                scale: gsap.utils.random(0.1, 0.6),
+                backgroundColor: colors[Math.floor(Math.random() * colors.length)]
+            });
+
+            gsap.to(particle, {
+                y: `+=${gsap.utils.random(20, 100)}`,
+                x: `+=${gsap.utils.random(-20, 20)}`,
+                opacity: 0,
+                duration: gsap.utils.random(1, 3),
+                repeat: -1,
+                ease: 'power1.out'
+            });
+        }
+    </script>
+    <SCRIPT>
+        // Interactive Service Showcase
+const serviceButtons = document.querySelectorAll('.service-btn');
+const serviceImage = document.getElementById('service-image');
+const serviceOverlay = document.getElementById('service-overlay');
+const serviceDescription = document.getElementById('service-description');
+const progressBar = document.getElementById('progress-bar');
+const metricsContainer = document.getElementById('metrics-container');
+
+const services = {
+    strategy: {
+        image: 'https://via.placeholder.com/800x600?text=Business+Strategy',
+        description: 'Develop winning strategies to propel your business forward in today\'s competitive landscape.',
+        metrics: [
+            { name: 'Revenue Growth', value: 25, unit: '%' },
+            { name: 'Market Share', value: 15, unit: '%' },
+            { name: 'Client Satisfaction', value: 4.8, unit: '/5' }
+        ]
+    },
+    coaching: {
+        image: 'https://via.placeholder.com/800x600?text=Career+Coaching',
+        description: 'Accelerate your career growth with personalized coaching and mentorship programs.',
+        metrics: [
+            { name: 'Promotion Rate', value: 40, unit: '%' },
+            { name: 'Skill Improvement', value: 60, unit: '%' },
+            { name: 'Job Satisfaction', value: 4.5, unit: '/5' }
+        ]
+    },
+    optimization: {
+        image: 'https://via.placeholder.com/800x600?text=Process+Optimization',
+        description: 'Streamline your operations and maximize efficiency with our expert process optimization services.',
+        metrics: [
+            { name: 'Efficiency Boost', value: 35, unit: '%' },
+            { name: 'Cost Reduction', value: 20, unit: '%' },
+            { name: 'Time Saved', value: 15, unit: 'hrs/week' }
+        ]
+    }
+};
+
+let currentService = null;
+let progressInterval = null;
+
+function updateMetrics(service) {
+    metricsContainer.innerHTML = '';
+    services[service].metrics.forEach(metric => {
+        const metricEl = document.createElement('div');
+        metricEl.className = 'text-center';
+        metricEl.innerHTML = `
+            <p class="text-gray-600">${metric.name}</p>
+            <p class="text-2xl font-bold text-blue-600">0<span class="text-sm">${metric.unit}</span></p>
+        `;
+        metricsContainer.appendChild(metricEl);
+        
+        gsap.to(metricEl.querySelector('.text-2xl'), {
+            innerHTML: `${metric.value}<span class="text-sm">${metric.unit}</span>`,
+            duration: 2,
+            ease: "power2.out",
+            snap: { innerHTML: 1 }
+        });
+    });
+}
+
+function startProgress() {
+    let width = 0;
+    progressInterval = setInterval(() => {
+        if (width >= 100) {
+            clearInterval(progressInterval);
+            gsap.to(serviceOverlay, { opacity: 0, duration: 0.3 });
+        } else {
+            width++;
+            progressBar.style.width = width + '%';
+        }
+    }, 30);
+}
+
+serviceButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const service = button.dataset.service;
+        if (service === currentService) return;
+        
+        currentService = service;
+        clearInterval(progressInterval);
+        progressBar.style.width = '0%';
+        
+        gsap.to(serviceImage, { opacity: 0, duration: 0.3, onComplete: () => {
+            serviceImage.src = services[service].image;
+            gsap.to(serviceImage, { opacity: 1, duration: 0.3 });
+        }});
+        
+        serviceDescription.textContent = services[service].description;
+        gsap.to(serviceOverlay, { opacity: 1, duration: 0.3 });
+        
+        updateMetrics(service);
+        startProgress();
+        
+        // Button animation
+        gsap.from(button, {
+            scale: 0.9,
+            duration: 0.3,
+            ease: "back.out(1.7)"
+        });
+    });
+});
+
+serviceImage.addEventListener('mousemove', (e) => {
+    const { left, top, width, height } = serviceImage.getBoundingClientRect();
+    const x = (e.clientX - left) / width;
+    const y = (e.clientY - top) / height;
+    
+    gsap.to(serviceOverlay, {
+        opacity: 1 - Math.abs(x - 0.5) - Math.abs(y - 0.5),
+        duration: 0.3
+    });
+});
+
+serviceImage.addEventListener('mouseleave', () => {
+    gsap.to(serviceOverlay, { opacity: 1, duration: 0.3 });
+});
+
+// Initial setup
+updateMetrics('strategy');
+startProgress();
+    </SCRIPT>
+</body>
+</html>

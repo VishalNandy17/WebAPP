@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALTIUS - Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-animation {
+            animation: float 5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-br from-white via-gray-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Elevate your business and career with our tailored solutions designed to meet your unique challenges and goals.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Business Strategy Service -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl">
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 float-animation">
+                            <i class="fas fa-chart-line text-3xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Business Strategy</h3>
+                        <p class="text-gray-600 mb-4">Develop comprehensive strategies to drive growth, optimize operations, and achieve your business objectives.</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center">
+                            Learn More
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Career Development Service -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl">
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 float-animation">
+                            <i class="fas fa-user-tie text-3xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Career Development</h3>
+                        <p class="text-gray-600 mb-4">Navigate your professional journey with personalized career strategies, skill enhancement, and leadership development.</p>
+                        <a href="#" class="text-green-600 hover:text-green-800 font-semibold inline-flex items-center">
+                            Learn More
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Digital Transformation Service -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl">
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4 float-animation">
+                            <i class="fas fa-digital-tachograph text-3xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Digital Transformation</h3>
+                        <p class="text-gray-600 mb-4">Leverage cutting-edge technologies to modernize your business processes and stay ahead in the digital age.</p>
+                        <a href="#" class="text-purple-600 hover:text-purple-800 font-semibold inline-flex items-center">
+                            Learn More
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors inline-flex items-center">
+                    View All Services
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Services section animations
+        gsap.from("#services h2", {
+            scrollTrigger: {
+                trigger: "#services",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse"
+            },
+            duration: 1,
+            opacity: 0,
+            y: 50,
+            ease: "power2.out"
+        });
+
+        gsap.from("#services .grid > div", {
+            scrollTrigger: {
+                trigger: "#services",
+                start: "top 60%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse"
+            },
+            duration: 0.8,
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+
+        // Hover effect for service cards
+        const serviceCards = document.querySelectorAll('#services .grid > div');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, {duration: 0.3, y: -10, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"});
+            });
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, {duration: 0.3, y: 0, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"});
+            });
+        });
+    </script>
+</body>
+</html>
